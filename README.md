@@ -31,7 +31,7 @@
   - [Propuestas de Mejoras](#propuestas-de-mejoras)
 <!-- /TOC -->
 </summary>
-
+</details>
 -----
 
 <!-- TOC ignore:true -->
