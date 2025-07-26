@@ -1,7 +1,17 @@
 <div id="top"/>
 <details open>
-<summary><b>Tabla de Contenidos</b> (click para abrir/cerrar)</summary>
+Table of contents
+=================
 <!--ts-->
+  - [Resumen Ejecutivo](#resumen-ejecutivo)
+  - [Desafío Empresarial](#desafio-empresarial)
+    - [Escenario Empresarial](#escenario-empresarial)
+    - [Desafíos encontrados](#desafios-encontrados)
+    - [Importancia para la Empresa](#importancia-para-la-empresa)
+<!--te-->
+
+  
+<summary><b>Tabla de Contenidos</b> (click para abrir/cerrar)</summary>
 <!-- TOC updateonsave:false -->
   - [Resumen Ejecutivo](#resumen-ejecutivo)
   - [Desafío Empresarial](#desafio-empresarial)
@@ -31,7 +41,6 @@
     - [¿Qué harías diferente si implementaras este proyecto en la vida real?](#implementacion)
   - [Propuestas de Mejoras](#propuestas-de-mejoras)
 <!-- /TOC -->
-<!--te-->
 </summary>
 </details>
 -----
