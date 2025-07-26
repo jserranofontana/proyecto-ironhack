@@ -1,5 +1,40 @@
 <div id="top"/>
+<details open>
+<summary><b>Tabla de Contenidos</b> (click para abrir/cerrar)</summary>
+<!-- TOC updateonsave:false -->
+  - [Resumen Ejecutivo](#resumen-ejecutivo)
+  - [Desafío Empresarial](#desafio-empresarial)
+    - [Escenario Empresarial](#escenario-empresarial)
+    - [Desafíos encontrados](#desafios-encontrados)
+    - [Importancia para la Empresa](#importancia-para-la-empresa)
+  - [Estrategia de IA](#estrategia-de-ia)
+    - [Objetivos](#objetivos)
+    - [Enfoque de Automatización](#enfoque-de-automatizacion)
+    - [Herramientas de LLM y Make.com u otras a utilizar:](#herramientas)
+  - [Análisis de Datos e Insights si aplica](#analisis-de-datos)
+  - [Prototipo de Automatización Make.com](#prototipo-de-automatizacion)
+    - [Requisitos](#requisitos)
+    - [Herramientas](#herramientas)
+    - [Flujo](#flujo)
+    - [Descripción paso a paso del flujo de trabajo en Make.com:](#descripcion-flujo)
+    - [Captura de pantalla o diagrama de tu flujo de trabajo:](#diagrama-flujo)
+  - [Consideraciones Éticas y Riesgo](#consideraciones-eticas)
+    - [Riesgos éticos identificados:](#riesgos)
+    - [Medidas tomadas para mitigar estos riesgos:](#medidas-tomadas)
+  - [Métricas de Éxit](#metricas)
+    - [¿Cómo vamos a medir el éxito de tu proyecto? KPIs](#kpis)
+    - [¿Qué resultados esperas obtener?](#resultados)
+    - [Gráficos de KPIs Ejemplos:](#graficos)
+  - [Reflexiones Finale](#reflexiones)
+    - [¿Qué fue lo más valioso que aprendiste durante este proyecto?](#aprendizaje)
+    - [¿Qué harías diferente si implementaras este proyecto en la vida real?](#implementacion)
+  - [Propuestas de Mejoras](#propuestas-de-mejoras)
+<!-- /TOC -->
+</summary>
 
+-----
+
+<!-- TOC ignore:true -->
 ## Estudio del ciclo de gestión y archivo de facturas recibidas en una pyme industrial
 
 <div id="resumen-ejecutivo"/>
