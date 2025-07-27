@@ -30,10 +30,15 @@ Este sistema reduce drásticamente el tiempo de procesamiento manual, minimiza e
 El repositorio está organizado de la siguiente manera para facilitar la navegación y el entendimiento del proyecto.
 
 ├── documentación_proyecto/ # Contiene todos los documentos con la descripción del proyecto (CSV, etc.)
+
 ├── scenarios_make/         # Exportaciones (blueprints) de los escenarios de Make.com en formato .json.
+
 ├── proyecto IA.md          # Resumen ejecutivo del proyecto en formato MarkDown.
+
 ├── proyecto IA.html        # Resumen ejecutivo del proyecto en formato HTML.
+
 ├── proyecto IA.pdf         # Resumen ejecutivo del proyecto en formato PDF.
+
 
 └── README.md               # Este mismo archivo.
 
