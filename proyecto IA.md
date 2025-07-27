@@ -80,7 +80,7 @@ El proyecto, aborda la problemática descrita y propone algunas soluciones para 
 
 El siguiente esquema, refleja el proceso tal y como se realiza actualmente.
 
-<img src="flujo previo.svg" width="100%">
+<img src="./documentacion_proyecto/flujo previo.svg" width="100%">
 
 -------
 <div id="desafios-encontrados"/>
@@ -332,11 +332,96 @@ Planteamos la siguiente descripción funcional del proyecto:
     * Si se recibe un correo y se detecta algún error, se creará el registro de proceso en estado **Error**. La indicación del error contendrá la descripción del mismo.
    
 - Nos vamos a apoyar en este primer paso del proceso en **5 carpetas de almacenamiento de ficheros** (preferiblemente en la nube) con al siguiente funcionalidad.
-    * En una primera carpeta, tendremos aquellos documentos recibidos y que están en estado **Nuevo**.
-    * En una segunda carpeta, tendremos aquellos documentos recibidos y que están en proceso de **OCR**.
-    * En una tercera carpeta, tendremos aquellos documentos recibidos y que están en proceso de **Gestión**.
-    * En una cuarta carpeta, tendremos aquellos documentos recibidos y cuyo procesamiento haya generado algún **Error**.
-    * En una última carpeta (**Procesado**), tendremos aquellos documentos recibidos y que se han **procesado completamente**.
+    * En una primera carpeta, tendremos aquellos documentos recibidos y que están en estado **Nuevo**. Vamos a necesitar los siguientes campos en este hoja de datos:
+        - Estado. Este este momento, este dato será **Nuevo**
+        - Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Fecha (email).
+        - Asunto (email).
+        - Contenido (email).
+        - Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)
+        - MimeType Adjunto. Tipo MIME del archivo recibido
+        - Tamaño Adjunto.	
+        - File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.
+        - Fecha Entrada. Fecha de la recepción del email.
+        - Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".
+        - Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"
+        - Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".
+        - Fecha Error. Fecha en que el archivo se ha registrado como error.
+        - Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.
+    * En una segunda carpeta, tendremos aquellos documentos recibidos y que están en proceso de **OCR**. Vamos a necesitar los siguientes campos en este hoja de datos:
+        - Estado. Este este momento, este dato será **OCR**
+        - Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Fecha (email).
+        - Asunto (email).
+        - Contenido (email).
+        - Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)
+        - MimeType Adjunto. Tipo MIME del archivo recibido
+        - Tamaño Adjunto.	
+        - File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.
+        - Fecha Entrada. Fecha de la recepción del email.
+        - Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".
+        - Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"
+        - Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".
+        - Fecha Error. Fecha en que el archivo se ha registrado como error.
+        - Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.
+    * En una tercera carpeta, tendremos aquellos documentos recibidos y que están en proceso de **Gestión**. Vamos a necesitar los siguientes campos en este hoja de datos:
+        - Estado. Este este momento, este dato será **Gestión**
+        - Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Fecha (email).
+        - Asunto (email).
+        - Contenido (email).
+        - Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)
+        - MimeType Adjunto. Tipo MIME del archivo recibido
+        - Tamaño Adjunto.	
+        - File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.
+        - Texto Extraido. Es el texto que se ha extraido después del proceso de OCR.
+        - Fecha Entrada. Fecha de la recepción del email.
+        - Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".
+        - Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"
+        - Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".
+        - Fecha Error. Fecha en que el archivo se ha registrado como error.
+        - Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.    
+    * En una cuarta carpeta, tendremos aquellos documentos recibidos y cuyo procesamiento haya generado algún **Error**. Vamos a necesitar los siguientes campos en este hoja de datos:
+        - Estado. Este este momento, este dato será **Error**
+        - Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Fecha (email).
+        - Asunto (email).
+        - Contenido (email).
+        - Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)
+        - MimeType Adjunto. Tipo MIME del archivo recibido
+        - Tamaño Adjunto.	
+        - File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.
+        - Error. Texto del error que se ha encontrado en el procesamiento de este archivo.
+        - Fecha Entrada. Fecha de la recepción del email.
+        - Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".
+        - Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"
+        - Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".
+        - Fecha Error. Fecha en que el archivo se ha registrado como error.
+        - Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.        
+    * En una última carpeta (**Procesado**), tendremos aquellos documentos recibidos y que se han **procesado completamente**. Vamos a necesitar los siguientes campos en este hoja de datos:
+        - Estado. Este este momento, este dato será **Gestión**
+        - Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)
+        - Fecha (email).
+        - Asunto (email).
+        - Contenido (email).
+        - Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)
+        - MimeType Adjunto. Tipo MIME del archivo recibido
+        - Tamaño Adjunto.	
+        - File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.
+        - Texto Extraido. Es el texto que se ha extraido después del proceso de OCR.
+        - JSON Extraido. Será la información extraida por el módulo LLM después de pasarle el texto extraido del documento.
+        - ID Asiento. Será el ID del asiento contable generado en Odoo.
+        - Fecha Entrada. Fecha de la recepción del email.
+        - Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".
+        - Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"
+        - Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".
+        - Fecha Error. Fecha en que el archivo se ha registrado como error.
+        - Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.    
 
 - Para la extracción de la información relativa a cada documento, utilizaremos un LLM que mediante prompt, nos devuelva dicha información en un formato apropiado para su gestión automática. Tendremos un par de requisitos:
 
@@ -602,10 +687,10 @@ Planteamos la siguiente descripción funcional del proyecto:
     ```
   Se han utilizado estos ejemplos de factura para la realización de las pruebas.
 
-<img src="INV-123TINTA.png" width="50%"><img src="INV-IVAIN.png" width="50%">
-<img src="INV-TRANSNATUR.png" width="50%"><img src="INV-MOVISTAR.png" width="50%">
-<img src="INV-SUMARO.png" width="50%"><img src="INV-CAYCO-1.png" width="50%">    
-<img src="INV-CAYCO-2.png" width="50%"><img src="INV-CAYCO-3.png" width="50%">    
+<img src="./documentacion_proyecto/INV-123TINTA.png" width="50%"><img src="./documentacion_proyecto/INV-IVAIN.png" width="50%">
+<img src="./documentacion_proyecto/INV-TRANSNATUR.png" width="50%"><img src="./documentacion_proyecto/INV-MOVISTAR.png" width="50%">
+<img src="./documentacion_proyecto/INV-SUMARO.png" width="50%"><img src="./documentacion_proyecto/INV-CAYCO-1.png" width="50%">    
+<img src="./documentacion_proyecto/INV-CAYCO-2.png" width="50%"><img src="./documentacion_proyecto/INV-CAYCO-3.png" width="50%">    
 
 - Como sistema de gestión ERP, vamos a utilizar ODOO
 
@@ -667,7 +752,7 @@ El flujo se compone de tres escenarios principales que se activan por eventos o 
                 * **Módulo de conversión de archivos (ej. CloudConvert, Zamzar):** Convierte la imagen a PDF/A.
                 * **Módulo "Upload a file" (Google Drive):** Sube el PDF/A convertido a la misma carpeta **"Nuevo"** (opcionalmente reemplazando el original o creando uno nuevo con sufijo).
 
-<img src="Escenario 1- Recepción y Clasificación de Nueva Factura.png" width="100%">
+<img src="./scenarios_make/Escenario 1- Recepción y Clasificación de Nueva Factura.png" width="100%">
 
 - **Escenario 2: Procesamiento OCR de Facturas "Nuevas"**
     1.  **Módulo "Search files/Watch new files" (Google Drive - Carpeta "Nuevo"):** Se activa periódicamente o por webhook cuando se añade un nuevo archivo a la carpeta **"Nuevo"**.
@@ -683,9 +768,9 @@ El flujo se compone de tres escenarios principales que se activan por eventos o 
             * **Módulo "Move a file" (Google Drive):** Mueve el documento a la carpeta **"Error"**.
             * **Módulo "Update a row" (Google Sheets - Hoja "OCR"):** Actualiza el estado a **"Error"** y mueve el registro a la hoja **"Error"**, registrando el mensaje de error.
 
-<img src="Escenario 2- Procesamiento de Facturas -Nuevas- Make.com.png" <img src="Escenario 2- Procesamiento de Facturas -Nuevas- Make.com.png" width="100%">
+<img src="./scenarios_make/Escenario 2- Procesamiento de Facturas -Nuevas- Make.com.png" width="100%">
 
-<img src="Escenario 2.1- Procesamiento OCR de Facturas -Nuevas- Make.com.png" width="100%">
+<img src="./scenarios_make/Escenario 2.1- Procesamiento OCR de Facturas -Nuevas- Make.com.png" width="100%">
 
 - **Escenario 3: Extracción LLM y Contabilización en Odoo**
     1.  **Módulo "Search files/Watch new files" (Google Drive - Carpeta "Gestión"):** Se activa periódicamente o por webhook cuando se añade un nuevo archivo a la carpeta **"Gestión"**.
@@ -706,19 +791,19 @@ El flujo se compone de tres escenarios principales que se activan por eventos o 
             * **Módulo "Move a file" (Google Drive):** Mueve el documento PDF/A a la carpeta **"Error"**.
             * **Módulo "Update a row" (Google Sheets - Hoja "Gestión"):** Actualiza el estado a **"Error"** y mueve el registro a la hoja **"Error"**, registrando el mensaje de error del LLM o de validación.
 
-<img src="Escenario 3- Extracción LLM y Contabilización en Odoo.png" width="100%">
+<img src="./scenarios_make/Escenario 3- Extracción LLM y Contabilización en Odoo.png" width="100%">
 
 <div id="diagrama-flujo"/>
 
 #### Captura de pantalla o diagrama de tu flujo de trabajo: [:top:](#top)
 - **Escenario 1 - Recepción y Clasificación**
-<img src="flujo Escenario 1.svg" width="500px" style="display: block; margin: 0 auto">
+<img src="./documentacion_proyecto/flujo Escenario 1.svg" width="500px" style="display: block; margin: 0 auto">
 
 - **Escenario 2 - Procesamiento OCR**
-<img src="flujo Escenario 2.svg" width="500px" style="display: block; margin: 0 auto">
+<img src="./documentacion_proyecto/flujo Escenario 2.svg" width="500px" style="display: block; margin: 0 auto">
 
 - **Escenario 3 - Extracción LLM y Contabilización**
-<img src="flujo Escenario 3.svg" width="500px" style="display: block; margin: 0 auto">
+<img src="./documentacion_proyecto/flujo Escenario 3.svg" width="500px" style="display: block; margin: 0 auto">
 
 -----
 

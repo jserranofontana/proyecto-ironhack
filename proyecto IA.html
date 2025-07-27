@@ -435,11 +435,111 @@ Estos insights permitirán <strong>optimizar el flujo de trabajo y la configurac
 <li>
 <p>Nos vamos a apoyar en este primer paso del proceso en <strong>5 carpetas de almacenamiento de ficheros</strong> (preferiblemente en la nube) con al siguiente funcionalidad.</p>
 <ul>
-<li>En una primera carpeta, tendremos aquellos documentos recibidos y que están en estado <strong>Nuevo</strong>.</li>
-<li>En una segunda carpeta, tendremos aquellos documentos recibidos y que están en proceso de <strong>OCR</strong>.</li>
-<li>En una tercera carpeta, tendremos aquellos documentos recibidos y que están en proceso de <strong>Gestión</strong>.</li>
-<li>En una cuarta carpeta, tendremos aquellos documentos recibidos y cuyo procesamiento haya generado algún <strong>Error</strong>.</li>
-<li>En una última carpeta (<strong>Procesado</strong>), tendremos aquellos documentos recibidos y que se han <strong>procesado completamente</strong>.</li>
+<li>En una primera carpeta, tendremos aquellos documentos recibidos y que están en estado <strong>Nuevo</strong>. Vamos a necesitar los siguientes campos en este hoja de datos:
+<ul>
+<li>Estado. Este este momento, este dato será <strong>Nuevo</strong></li>
+<li>Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Fecha (email).</li>
+<li>Asunto (email).</li>
+<li>Contenido (email).</li>
+<li>Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)</li>
+<li>MimeType Adjunto. Tipo MIME del archivo recibido</li>
+<li>Tamaño Adjunto.</li>
+<li>File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.</li>
+<li>Fecha Entrada. Fecha de la recepción del email.</li>
+<li>Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".</li>
+<li>Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"</li>
+<li>Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".</li>
+<li>Fecha Error. Fecha en que el archivo se ha registrado como error.</li>
+<li>Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.</li>
+</ul>
+</li>
+<li>En una segunda carpeta, tendremos aquellos documentos recibidos y que están en proceso de <strong>OCR</strong>. Vamos a necesitar los siguientes campos en este hoja de datos:
+<ul>
+<li>Estado. Este este momento, este dato será <strong>OCR</strong></li>
+<li>Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Fecha (email).</li>
+<li>Asunto (email).</li>
+<li>Contenido (email).</li>
+<li>Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)</li>
+<li>MimeType Adjunto. Tipo MIME del archivo recibido</li>
+<li>Tamaño Adjunto.</li>
+<li>File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.</li>
+<li>Fecha Entrada. Fecha de la recepción del email.</li>
+<li>Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".</li>
+<li>Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"</li>
+<li>Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".</li>
+<li>Fecha Error. Fecha en que el archivo se ha registrado como error.</li>
+<li>Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.</li>
+</ul>
+</li>
+<li>En una tercera carpeta, tendremos aquellos documentos recibidos y que están en proceso de <strong>Gestión</strong>. Vamos a necesitar los siguientes campos en este hoja de datos:
+<ul>
+<li>Estado. Este este momento, este dato será <strong>Gestión</strong></li>
+<li>Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Fecha (email).</li>
+<li>Asunto (email).</li>
+<li>Contenido (email).</li>
+<li>Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)</li>
+<li>MimeType Adjunto. Tipo MIME del archivo recibido</li>
+<li>Tamaño Adjunto.</li>
+<li>File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.</li>
+<li>Texto Extraido. Es el texto que se ha extraido después del proceso de OCR.</li>
+<li>Fecha Entrada. Fecha de la recepción del email.</li>
+<li>Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".</li>
+<li>Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"</li>
+<li>Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".</li>
+<li>Fecha Error. Fecha en que el archivo se ha registrado como error.</li>
+<li>Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.</li>
+</ul>
+</li>
+<li>En una cuarta carpeta, tendremos aquellos documentos recibidos y cuyo procesamiento haya generado algún <strong>Error</strong>. Vamos a necesitar los siguientes campos en este hoja de datos:
+<ul>
+<li>Estado. Este este momento, este dato será <strong>Error</strong></li>
+<li>Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Fecha (email).</li>
+<li>Asunto (email).</li>
+<li>Contenido (email).</li>
+<li>Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)</li>
+<li>MimeType Adjunto. Tipo MIME del archivo recibido</li>
+<li>Tamaño Adjunto.</li>
+<li>File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.</li>
+<li>Error. Texto del error que se ha encontrado en el procesamiento de este archivo.</li>
+<li>Fecha Entrada. Fecha de la recepción del email.</li>
+<li>Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".</li>
+<li>Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"</li>
+<li>Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".</li>
+<li>Fecha Error. Fecha en que el archivo se ha registrado como error.</li>
+<li>Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.</li>
+</ul>
+</li>
+<li>En una última carpeta (<strong>Procesado</strong>), tendremos aquellos documentos recibidos y que se han <strong>procesado completamente</strong>. Vamos a necesitar los siguientes campos en este hoja de datos:
+<ul>
+<li>Estado. Este este momento, este dato será <strong>Gestión</strong></li>
+<li>Remitente (nombre). Nombre del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Remitente (email). Email del remitente del correo electrónico (en caso de que la factura llegue por esta vía)</li>
+<li>Fecha (email).</li>
+<li>Asunto (email).</li>
+<li>Contenido (email).</li>
+<li>Nombre Adjunto. Nombre del archivo adjunto (habrá una fila por cada archivo adjunto recibido)</li>
+<li>MimeType Adjunto. Tipo MIME del archivo recibido</li>
+<li>Tamaño Adjunto.</li>
+<li>File ID. Una vez guardado en la carpeta de Google Drive, este será el ID del fichero.</li>
+<li>Texto Extraido. Es el texto que se ha extraido después del proceso de OCR.</li>
+<li>JSON Extraido. Será la información extraida por el módulo LLM después de pasarle el texto extraido del documento.</li>
+<li>ID Asiento. Será el ID del asiento contable generado en Odoo.</li>
+<li>Fecha Entrada. Fecha de la recepción del email.</li>
+<li>Fecha Nuevo. Fecha en que se ha procesado el email y se ha determinado que contiene un archivo adjunto válido y por lo tanto se archivo en la carpeta "Nuevo".</li>
+<li>Fecha OCR. Fecha en que el archivo ha pasado a estar en estado "OCR"</li>
+<li>Fecha Gestión. Fecha en que el archivo ha pasado a estar en estado "Gestión".</li>
+<li>Fecha Error. Fecha en que el archivo se ha registrado como error.</li>
+<li>Fecha Procesado. Fecha en que se ha completado el procesamiento del archivo.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
@@ -812,8 +912,7 @@ SOLO DEBES DEVOLVER EL FORMATO JSON APROPIADO<span class="token punctuation">,</
 <p>A continuación, se describe el flujo de trabajo en <a href="http://Make.com">Make.com</a>. Este flujo se dividiría en varios escenarios (uno por cada "Para cada documento nuevo en la carpeta...").</p>
 <p>El flujo se compone de tres escenarios principales que se activan por eventos o por programación:</p>
 <ul>
-<li>
-<p><strong>Escenario 1: Recepción y Clasificación de Nueva Factura</strong></p>
+<li><strong>Escenario 1: Recepción y Clasificación de Nueva Factura</strong>
 <ol>
 <li><strong>Módulo "Watch emails" (Gmail):</strong> Se activa cuando se recibe un nuevo correo en <code>invoices@domca.com</code>.</li>
 <li><strong>Filtro/Router:</strong>
@@ -839,8 +938,10 @@ SOLO DEBES DEVOLVER EL FORMATO JSON APROPIADO<span class="token punctuation">,</
 </li>
 </ol>
 </li>
-<li>
-<p><strong>Escenario 2: Procesamiento OCR de Facturas "Nuevas"</strong></p>
+</ul>
+<img src="../scenarios_make/Escenario 1- Recepción y Clasificación de Nueva Factura.png" width="100%">
+<ul>
+<li><strong>Escenario 2: Procesamiento OCR de Facturas "Nuevas"</strong>
 <ol>
 <li><strong>Módulo "Search files/Watch new files" (Google Drive - Carpeta "Nuevo"):</strong> Se activa periódicamente o por webhook cuando se añade un nuevo archivo a la carpeta <strong>"Nuevo"</strong>.</li>
 <li><strong>Módulo "Update a row" (Google Sheets - Hoja "Nuevo"):</strong> Actualiza el estado de la factura a <strong>"OCR"</strong>.</li>
@@ -865,8 +966,11 @@ SOLO DEBES DEVOLVER EL FORMATO JSON APROPIADO<span class="token punctuation">,</
 </li>
 </ol>
 </li>
-<li>
-<p><strong>Escenario 3: Extracción LLM y Contabilización en Odoo</strong></p>
+</ul>
+<img src="../scenarios_make/Escenario 2- Procesamiento de Facturas -Nuevas- Make.com.png" width="100%">
+<img src="../scenarios_make/Escenario 2.1- Procesamiento OCR de Facturas -Nuevas- Make.com.png" width="100%">
+<ul>
+<li><strong>Escenario 3: Extracción LLM y Contabilización en Odoo</strong>
 <ol>
 <li><strong>Módulo "Search files/Watch new files" (Google Drive - Carpeta "Gestión"):</strong> Se activa periódicamente o por webhook cuando se añade un nuevo archivo a la carpeta <strong>"Gestión"</strong>.</li>
 <li><strong>Módulo "Update a row" (Google Sheets - Hoja "Gestión"):</strong> Actualiza el estado a <strong>"Gestión"</strong> (redundante si el paso anterior ya lo hizo, pero asegura).</li>
@@ -900,6 +1004,7 @@ SOLO DEBES DEVOLVER EL FORMATO JSON APROPIADO<span class="token punctuation">,</
 </ol>
 </li>
 </ul>
+<img src="../scenarios_make/Escenario 3- Extracción LLM y Contabilización en Odoo.png" width="100%">
 <div id="diagrama-flujo">
 <h4 id="captura-de-pantalla-o-diagrama-de-tu-flujo-de-trabajo-toptop">Captura de pantalla o diagrama de tu flujo de trabajo: <a href="#top">🔝</a> </h4>
 <ul>
