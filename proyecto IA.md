@@ -667,6 +667,8 @@ El flujo se compone de tres escenarios principales que se activan por eventos o 
                 * **Módulo de conversión de archivos (ej. CloudConvert, Zamzar):** Convierte la imagen a PDF/A.
                 * **Módulo "Upload a file" (Google Drive):** Sube el PDF/A convertido a la misma carpeta **"Nuevo"** (opcionalmente reemplazando el original o creando uno nuevo con sufijo).
 
+<img src="Escenario 1- Recepción y Clasificación de Nueva Factura.png" width="100%">
+
 - **Escenario 2: Procesamiento OCR de Facturas "Nuevas"**
     1.  **Módulo "Search files/Watch new files" (Google Drive - Carpeta "Nuevo"):** Se activa periódicamente o por webhook cuando se añade un nuevo archivo a la carpeta **"Nuevo"**.
     2.  **Módulo "Update a row" (Google Sheets - Hoja "Nuevo"):** Actualiza el estado de la factura a **"OCR"**.
@@ -680,6 +682,10 @@ El flujo se compone de tres escenarios principales que se activan por eventos o 
         * **Ruta 2 (Error en OCR):** Si el OCR falla o el resultado es ilegible.
             * **Módulo "Move a file" (Google Drive):** Mueve el documento a la carpeta **"Error"**.
             * **Módulo "Update a row" (Google Sheets - Hoja "OCR"):** Actualiza el estado a **"Error"** y mueve el registro a la hoja **"Error"**, registrando el mensaje de error.
+
+<img src="Escenario 2- Procesamiento de Facturas -Nuevas- Make.com.png" <img src="Escenario 2- Procesamiento de Facturas -Nuevas- Make.com.png" width="100%">
+
+<img src="Escenario 2.1- Procesamiento OCR de Facturas -Nuevas- Make.com.png" width="100%">
 
 - **Escenario 3: Extracción LLM y Contabilización en Odoo**
     1.  **Módulo "Search files/Watch new files" (Google Drive - Carpeta "Gestión"):** Se activa periódicamente o por webhook cuando se añade un nuevo archivo a la carpeta **"Gestión"**.
@@ -699,6 +705,8 @@ El flujo se compone de tres escenarios principales que se activan por eventos o 
         * **Ruta 2 (Error en Extracción LLM o Validación):** Si el LLM devuelve `status: "error"` o faltan campos críticos, o las validaciones lógicas fallan.
             * **Módulo "Move a file" (Google Drive):** Mueve el documento PDF/A a la carpeta **"Error"**.
             * **Módulo "Update a row" (Google Sheets - Hoja "Gestión"):** Actualiza el estado a **"Error"** y mueve el registro a la hoja **"Error"**, registrando el mensaje de error del LLM o de validación.
+
+<img src="Escenario 3- Extracción LLM y Contabilización en Odoo.png" width="100%">
 
 <div id="diagrama-flujo"/>
 
